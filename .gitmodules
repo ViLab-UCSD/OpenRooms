@@ -1,0 +1,3 @@
+[submodule "OptixRenderer"]
+	path = OptixRenderer
+	url = https://github.com/lzqsd/OptixRenderer.git
