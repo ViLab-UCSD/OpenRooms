@@ -72,9 +72,9 @@ All rendered images and the corresponding ground-truths are saved in folder data
             info = pickle.load(fIn )
         ```
         There are 3 items saved in the dictionary, which we list blow.
-            * isWindow: True if the light source is a window, false if the light source is a lamp. 
-            * box3D: The 3D bounding box of the light source, including center (center), orientation (xAxis, yAxis, zAxis) and size (xLen, yLen, zLen). 
-            * box2D: The 2D bounding box of the light source on the image plane (x1, y1, x2, y2). 
+        * isWindow: True if the light source is a window, false if the light source is a lamp. 
+        * box3D: The 3D bounding box of the light source, including center (center), orientation (xAxis, yAxis, zAxis) and size (xLen, yLen, zLen). 
+        * box2D: The 2D bounding box of the light source on the image plane (x1, y1, x2, y2). 
         We only provide the light source geometry annotation for main_xml(1) 
     * Mask: The 120 × 160 2D binary masks for light sources (mask\*.png). We only provide the masks for main_xml(1). 
     * Direct shading: The 120 × 160 direct shading for each light source (imDS\*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
