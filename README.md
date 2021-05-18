@@ -63,13 +63,9 @@ Mask and Mask.zip: The 480 × 460 grey scale mask (immask_*.png) for light sourc
 SVLighting: The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
 
 # Read the envmap of resolution 1920 x 5120 x 3 in RGB format 
-
 env = cv2.imread('imenv_1', -1)[:, :, ::-1]
-
 # Reshape and permute the per-pixel environment maps
-
 env = env.reshape(120, 16, 160, 32, 3)
-
 env = env.transpose(0, 2, 1, 3, 4)
 
 We render per-pixel environment maps for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). Since the total size of per-pixel environment maps is 4.0 TB, we do not provide an extra .zip format for downloading. Please consider using the tool Rclone if you hope to download all the per-pixel environment maps.
@@ -106,6 +102,18 @@ Direct shading without occlusion: The 120 × 160 direct shading with outocclusio
 Shadow: The 120 × 160 shadow maps for each light source (imShadow*.png). We render the shadow map for main_xml(1) only. 
 
 ## Dataset Creation 
+GPU renderer: Our Optix-based GPU path tracer is available for downloading. 
+The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
 ## Applications
+
+## Related Datasets
+The OpenRooms dataset is built on the datasets listed below. We thank their creators for the excellent contribution. Please refer to prior datasets for license issues and terms of use if you hope to use them to create your own dataset. 
+
+ScanNet dataset: The real 3D scans of indoor scenes. 
+Scan2cad dataset: The alignment of CAD models to the scanned point clouds. 
+Laval outdoor lighting dataset: HDR outdoor environment maps 
+HDRI Haven lighting dataset: HDR outdoor environment maps 
+PartNet dataset: CAD models 
+
 
