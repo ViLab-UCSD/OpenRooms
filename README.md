@@ -17,11 +17,11 @@ All rendered images and the corresponding ground-truths are saved in folder data
     We render images for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1).
 
 1. Material and Material.zip: The 480 × 640 diffuse albedo maps (imbaseColor_\*.png) and roughness map (imroughness_\*.png). Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
-```python
-im = cv2.imread('imbaseColor_1.hdr')[:, :, ::-1]
-im = (im.astype(np.float32 ) / 255.0) ** (2.2)
-```
-We only render the diffuse albedo maps and roughness maps for main_xml(1) and mainDiffMat_xml(1) because mainDiffLight_xml(1) share the same material maps with the main_xml(1).
+    ```python
+    im = cv2.imread('imbaseColor_1.hdr')[:, :, ::-1]
+    im = (im.astype(np.float32 ) / 255.0) ** (2.2)
+    ```
+    We only render the diffuse albedo maps and roughness maps for main_xml(1) and mainDiffMat_xml(1) because mainDiffLight_xml(1) share the same material maps with the main_xml(1).
 
 Geometry and Geometry.zip: The 480 × 640 normal maps (imnomral_\*.png) and depth maps (imdepth_\*.dat). The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
 ```python
