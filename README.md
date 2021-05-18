@@ -88,10 +88,10 @@ The CAD models, environment maps, materials and code required to recreate the da
 
 ## Related Datasets
 The OpenRooms dataset is built on the datasets listed below. We thank their creators for the excellent contribution. Please refer to prior datasets for license issues and terms of use if you hope to use them to create your own dataset. 
-ScanNet dataset: The real 3D scans of indoor scenes. 
-Scan2cad dataset: The alignment of CAD models to the scanned point clouds. 
-Laval outdoor lighting dataset: HDR outdoor environment maps 
-HDRI Haven lighting dataset: HDR outdoor environment maps 
-PartNet dataset: CAD models 
+1. ScanNet dataset: The real 3D scans of indoor scenes. 
+1. Scan2cad dataset: The alignment of CAD models to the scanned point clouds. 
+1. Laval outdoor lighting dataset: HDR outdoor environment maps 
+1. HDRI Haven lighting dataset: HDR outdoor environment maps 
+1. PartNet dataset: CAD models 
 
 
