@@ -1,3 +1,6 @@
 [submodule "OptixRenderer"]
 	path = OptixRenderer
 	url = https://github.com/lzqsd/OptixRenderer.git
+[submodule "TileableTextureSynthesis"]
+	path = TileableTextureSynthesis
+	url = https://github.com/lzqsd/TileableTextureSynthesis.git
