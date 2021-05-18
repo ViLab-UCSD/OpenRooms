@@ -4,3 +4,9 @@
 [submodule "TileableTextureSynthesis"]
 	path = TileableTextureSynthesis
 	url = https://github.com/lzqsd/TileableTextureSynthesis.git
+[submodule "InverseRenderingOfIndoorScene"]
+	path = InverseRenderingOfIndoorScene
+	url = https://github.com/lzqsd/InverseRenderingOfIndoorScene.git
+[submodule "SphericalGaussianOptimization"]
+	path = SphericalGaussianOptimization
+	url = https://github.com/lzqsd/SphericalGaussianOptimization.git
