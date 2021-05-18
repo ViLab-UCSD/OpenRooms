@@ -10,7 +10,7 @@ We render six versions of images for all the scenes. Those rendered results are 
 ## Rendered Images and Ground-truths
 All rendered images and the corresponding ground-truths are saved in folder data/rendering/data/. In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in Demo and Demo.zip. 
 
-Images and Images.zip: The 480 × 640 HDR images (im_*.hdr), which can be read with the python command. 
+Images and Images.zip: The 480 × 640 HDR images (im_\*.hdr), which can be read with the python command. 
 ```python
 im = cv2.imread('im_1.hdr', -1)[:, :, ::-1]
 ```
@@ -18,17 +18,16 @@ We render images for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1).
 
 
 
-Material and Material.zip: The 480 × 640 diffuse albedo maps (imbaseColor_*.png) and roughness map (imroughness_*.png). Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
-
+Material and Material.zip: The 480 × 640 diffuse albedo maps (imbaseColor_\*.png) and roughness map (imroughness_\*.png). Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
+```python
 im = cv2.imread('imbaseColor_1.hdr')[:, :, ::-1]
-
 im = (im.astype(np.float32 ) / 255.0) ** (2.2)
-
+```
 We only render the diffuse albedo maps and roughness maps for main_xml(1) and mainDiffMat_xml(1) because mainDiffLight_xml(1) share the same material maps with the main_xml(1).
 
 
 
-Geometry and Geometry.zip: The 480 × 640 normal maps (imnomral_*.png) and depth maps (imdepth_*.dat). The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
+Geometry and Geometry.zip: The 480 × 640 normal maps (imnomral_\*.png) and depth maps (imdepth_\*.dat). The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
 
 with open('imdepth_1.dat', 'rb') as fIn:
 
@@ -58,9 +57,9 @@ We render normal maps for main_xml(1) and mainDiffMat_xml(1), and depth maps for
 
 
 
-Mask and Mask.zip: The 480 × 460 grey scale mask (immask_*.png) for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for main_xml(1) and mainDiffLight_xml(1). 
+Mask and Mask.zip: The 480 × 460 grey scale mask (immask_\*.png) for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for main_xml(1) and mainDiffLight_xml(1). 
 
-SVLighting: The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
+SVLighting: The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_\*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
 
 # Read the envmap of resolution 1920 x 5120 x 3 in RGB format 
 env = cv2.imread('imenv_1', -1)[:, :, ::-1]
@@ -72,23 +71,23 @@ We render per-pixel environment maps for main_xml(1), mainDiffMat_xml(1) and mai
 
 
 
-SVSG and SVSG.zip: The ground-truth spatially-varying spherical Gaussian (SG) parameters (imsgEnv_*.h5), computed from this optimization code. We generate the ground-truth SG parameters for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). For the detailed format, please refer to the optimization code. 
+SVSG and SVSG.zip: The ground-truth spatially-varying spherical Gaussian (SG) parameters (imsgEnv_\*.h5), computed from this optimization code. We generate the ground-truth SG parameters for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). For the detailed format, please refer to the optimization code. 
 
-Shading and Shading.zip: The 120 × 160 diffuse shading (imshading_*.hdr) computed by intergrating the per-pixel environment maps. We render shading for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). 
+Shading and Shading.zip: The 120 × 160 diffuse shading (imshading_\*.hdr) computed by intergrating the per-pixel environment maps. We render shading for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). 
 
-SVLightingDirect and SVLightingDirect.zip: The (30 × 16) × (40 × 32) per-pixel environment maps with direct illumination (imenvDirect_*.hdr) only. The spatial resolution is 30 × 40 while the environment maps resolution is 16 × 32. The direct per-pixel environment maps can be load the same way as the per-pixel environment maps. We only render direct per-pixel environment maps for main_xml(1) and mainDiffLight_xml(1) because the direct illumination of mainDiffMat_xml(1) is the same as main_xml(1). 
+SVLightingDirect and SVLightingDirect.zip: The (30 × 16) × (40 × 32) per-pixel environment maps with direct illumination (imenvDirect_\*.hdr) only. The spatial resolution is 30 × 40 while the environment maps resolution is 16 × 32. The direct per-pixel environment maps can be load the same way as the per-pixel environment maps. We only render direct per-pixel environment maps for main_xml(1) and mainDiffLight_xml(1) because the direct illumination of mainDiffMat_xml(1) is the same as main_xml(1). 
 
-ShadingDirect and ShadingDirect.zip: The 120 × 160 direct shading (imshadingDirect_*.rgbe). To load the direct shading, we can use the following python command. 
+ShadingDirect and ShadingDirect.zip: The 120 × 160 direct shading (imshadingDirect_\*.rgbe). To load the direct shading, we can use the following python command. 
 
 im = cv2.imread('imshadingDirect_1.rgbe', -1)[:, :, ::-1]
 
 
 
-SemanticLabel and SemanticLabel.zip: The 480 × 640 semantic segmentation label (imsemLabel_*.npy). We provide semantic labels for 45 classes of commonly seen objects and layout for indoor scenes. The 45 classes can be found in semanticLabels.txt. We only render the semantic labels for main_xml(1). 
+SemanticLabel and SemanticLabel.zip: The 480 × 640 semantic segmentation label (imsemLabel_\*.npy). We provide semantic labels for 45 classes of commonly seen objects and layout for indoor scenes. The 45 classes can be found in semanticLabels.txt. We only render the semantic labels for main_xml(1). 
 
 LightSource and LightSource.zip: The light source information, including geometry, shadow and direct shading of each light source. In each scene directory, light_x directory corresponds to im_x.hdr. In each light_x directory, you will see files with numbers in their names. The numbers correspond to the light source ID, i.e. if the IDs are from 0 to 4, then there are 5 light sources in this scene. 
 
-Geometry: We provide geometry annotation for windows and lamps (box_*.dat). To read the annotation, we can use the following python commmands. with open('box_0.dat', 'rb')  as fIn:
+Geometry: We provide geometry annotation for windows and lamps (box_\*.dat). To read the annotation, we can use the following python commmands. with open('box_0.dat', 'rb')  as fIn:
     info = pickle.load(fIn )
 
 There are 3 items saved in the dictionary, which we list blow.
@@ -96,10 +95,10 @@ isWindow: True if the light source is a window, false if the light source is a l
 box3D: The 3D bounding box of the light source, including center (center), orientation (xAxis, yAxis, zAxis) and size (xLen, yLen, zLen). 
 box2D: The 2D bounding box of the light source on the image plane (x1, y1, x2, y2). 
 We only provide the light source geometry annotation for main_xml(1) 
-Mask: The 120 × 160 2D binary masks for light sources (mask*.png). We only provide the masks for main_xml(1). 
-Direct shading: The 120 × 160 direct shading for each light source (imDS*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
-Direct shading without occlusion: The 120 × 160 direct shading with outocclusion for each light source (imNoOcclu*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
-Shadow: The 120 × 160 shadow maps for each light source (imShadow*.png). We render the shadow map for main_xml(1) only. 
+Mask: The 120 × 160 2D binary masks for light sources (mask\*.png). We only provide the masks for main_xml(1). 
+Direct shading: The 120 × 160 direct shading for each light source (imDS\*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
+Direct shading without occlusion: The 120 × 160 direct shading with outocclusion for each light source (imNoOcclu\*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
+Shadow: The 120 × 160 shadow maps for each light source (imShadow\*.png). We render the shadow map for main_xml(1) only. 
 
 ## Dataset Creation 
 GPU renderer: Our Optix-based GPU path tracer is available for downloading. 
