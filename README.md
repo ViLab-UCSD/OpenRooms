@@ -81,10 +81,13 @@ All rendered images and the corresponding ground-truths are saved in folder data
     * Shadow: The 120 × 160 shadow maps for each light source (imShadow\*.png). We render the shadow map for main_xml(1) only. 
 
 ## Dataset Creation 
-1. GPU renderer: Our Optix-based GPU path tracer is available for downloading. 
+1. [GPU renderer]: Our Optix-based GPU path tracer is available for downloading. 
+
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
 ## Applications
+1. Inverse Rendering
+2. Robotics
 
 ## Related Datasets
 The OpenRooms dataset is built on the datasets listed below. We thank their creators for the excellent contribution. Please refer to prior datasets for license issues and terms of use if you hope to use them to create your own dataset. 
