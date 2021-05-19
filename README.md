@@ -42,7 +42,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 
 4. **[Mask]()** and **[Mask.zip]()**: The 480 × 460 grey scale mask (immask_\*.png) for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for main_xml(1) and mainDiffLight_xml(1). 
 
-1. **[SVLighting](): The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_\*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
+5. **[SVLighting](): The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_\*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
     ```python
     # Read the envmap of resolution 1920 x 5120 x 3 in RGB format 
     env = cv2.imread('imenv_1', -1)[:, :, ::-1]
@@ -52,20 +52,20 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     ```
     We render per-pixel environment maps for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). Since the total size of per-pixel environment maps is 4.0 TB, we do not provide an extra .zip format for downloading. Please consider using the tool [Rclone](https://rclone.org/) if you hope to download all the per-pixel environment maps.
 
-1. [SVSG]() and [SVSG.zip](): The ground-truth spatially-varying spherical Gaussian (SG) parameters (imsgEnv_\*.h5), computed from this optimization code. We generate the ground-truth SG parameters for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). For the detailed format, please refer to the optimization code. 
+6. [SVSG]() and [SVSG.zip](): The ground-truth spatially-varying spherical Gaussian (SG) parameters (imsgEnv_\*.h5), computed from this optimization code. We generate the ground-truth SG parameters for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). For the detailed format, please refer to the optimization code. 
 
-1. [Shading]() and [Shading.zip](): The 120 × 160 diffuse shading (imshading_\*.hdr) computed by intergrating the per-pixel environment maps. We render shading for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). 
+7. [Shading]() and [Shading.zip](): The 120 × 160 diffuse shading (imshading_\*.hdr) computed by intergrating the per-pixel environment maps. We render shading for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1). 
 
-1. [SVLightingDirect]() and [SVLightingDirect.zip](): The (30 × 16) × (40 × 32) per-pixel environment maps with direct illumination (imenvDirect_\*.hdr) only. The spatial resolution is 30 × 40 while the environment maps resolution is 16 × 32. The direct per-pixel environment maps can be load the same way as the per-pixel environment maps. We only render direct per-pixel environment maps for main_xml(1) and mainDiffLight_xml(1) because the direct illumination of mainDiffMat_xml(1) is the same as main_xml(1). 
+8. [SVLightingDirect]() and [SVLightingDirect.zip](): The (30 × 16) × (40 × 32) per-pixel environment maps with direct illumination (imenvDirect_\*.hdr) only. The spatial resolution is 30 × 40 while the environment maps resolution is 16 × 32. The direct per-pixel environment maps can be load the same way as the per-pixel environment maps. We only render direct per-pixel environment maps for main_xml(1) and mainDiffLight_xml(1) because the direct illumination of mainDiffMat_xml(1) is the same as main_xml(1). 
 
-1. [ShadingDirect]() and [ShadingDirect.zip](): The 120 × 160 direct shading (imshadingDirect_\*.rgbe). To load the direct shading, we can use the following python command. 
+9. [ShadingDirect]() and [ShadingDirect.zip](): The 120 × 160 direct shading (imshadingDirect_\*.rgbe). To load the direct shading, we can use the following python command. 
     ```python
     im = cv2.imread('imshadingDirect_1.rgbe', -1)[:, :, ::-1]
     ```
 
-1. [SemanticLabel]() and [SemanticLabel.zip](): The 480 × 640 semantic segmentation label (imsemLabel_\*.npy). We provide semantic labels for 45 classes of commonly seen objects and layout for indoor scenes. The 45 classes can be found in semanticLabels.txt. We only render the semantic labels for main_xml(1). 
+10. [SemanticLabel]() and [SemanticLabel.zip](): The 480 × 640 semantic segmentation label (imsemLabel_\*.npy). We provide semantic labels for 45 classes of commonly seen objects and layout for indoor scenes. The 45 classes can be found in semanticLabels.txt. We only render the semantic labels for main_xml(1). 
 
-1. [LightSource]() and [LightSource.zip](): The light source information, including geometry, shadow and direct shading of each light source. In each scene directory, light_x directory corresponds to im_x.hdr. In each light_x directory, you will see files with numbers in their names. The numbers correspond to the light source ID, i.e. if the IDs are from 0 to 4, then there are 5 light sources in this scene. 
+11. [LightSource]() and [LightSource.zip](): The light source information, including geometry, shadow and direct shading of each light source. In each scene directory, light_x directory corresponds to im_x.hdr. In each light_x directory, you will see files with numbers in their names. The numbers correspond to the light source ID, i.e. if the IDs are from 0 to 4, then there are 5 light sources in this scene. 
     * Geometry: We provide geometry annotation for windows and lamps (box_\*.dat) for main_xml(1) only. To read the annotation, we can use the following python commmands. 
         ```python
         with open('box_0.dat', 'rb')  as fIn:
@@ -81,7 +81,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     * Shadow: The 120 × 160 shadow maps for each light source (imShadow\*.png). We render the shadow map for main_xml(1) only. 
 
 ## Dataset Creation 
-1. [GPU renderer]: Our Optix-based GPU path tracer is available for downloading. 
+1. *[GPU renderer]()*: Our Optix-based GPU path tracer is available for downloading. 
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
