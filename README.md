@@ -10,7 +10,7 @@ We render six versions of images for all the scenes. Those rendered results are 
 ## Rendered Images and Ground-truths
 All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo]() and [Demo.zip](). 
 
-1. [Images]() and [Images.zip](): The 480 × 640 HDR images (im_\*.hdr), which can be read with the python command. 
+1. **[Images]()** and **[Images.zip]()**: The 480 × 640 HDR images (im_\*.hdr), which can be read with the python command. 
     ```python
     im = cv2.imread('im_1.hdr', -1)[:, :, ::-1]
     ```
