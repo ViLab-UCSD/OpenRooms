@@ -81,11 +81,13 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     * **Direct shading without occlusion**: The 120 × 160 direct shading with outocclusion for each light source `imNoOcclu*.rgbe`. We provide the direction shading for `main_xml(1)` and `mainDiffLight_xml(1)`. 
     * **Shadow**: The 120 × 160 shadow maps for each light source `imShadow*.png`. We render the shadow map for `main_xml(1)` only. 
 
-12. **[Friction]()** and **[Friction.zip]()**: The friction coefficients computed from our SVBRDF following the method proposed by [Zhang et al.](https://arxiv.org/abs/1603.07998)
+12. **[Friction]()** and **[Friction.zip]()**: The friction coefficients computed from our SVBRDF following the method proposed by [Zhang et al.](https://arxiv.org/abs/1603.07998) We compute the friction coefficients for `main_xml(1)` and `mainDiffLight_xml(1)`
 
 
 ## Dataset Creation 
 1. **[GPU renderer]()**: Our Optix-based GPU path tracer is available for downloading. 
+2. **[Tileable texture synthesis]()** 
+3. ** 
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
