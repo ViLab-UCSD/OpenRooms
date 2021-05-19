@@ -16,14 +16,14 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     ```
     We render images for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1).
 
-1. [Material]() and [Material.zip](): The 480 × 640 diffuse albedo maps (imbaseColor_\*.png) and roughness map (imroughness_\*.png). Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
+2. **[Material]()** and **[Material.zip]()**: The 480 × 640 diffuse albedo maps (imbaseColor_\*.png) and roughness map (imroughness_\*.png). Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
     ```python
     im = cv2.imread('imbaseColor_1.hdr')[:, :, ::-1]
     im = (im.astype(np.float32 ) / 255.0) ** (2.2)
     ```
     We only render the diffuse albedo maps and roughness maps for main_xml(1) and mainDiffMat_xml(1) because mainDiffLight_xml(1) share the same material maps with the main_xml(1).
 
-1. [Geometry]() and [Geometry.zip](): The 480 × 640 normal maps (imnomral_\*.png) and depth maps (imdepth_\*.dat). The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
+3. **[Geometry]()** and **[Geometry.zip]()**: The 480 × 640 normal maps (imnomral_\*.png) and depth maps (imdepth_\*.dat). The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
     ```python
     with open('imdepth_1.dat', 'rb') as fIn:
         # Read the height and width of depth
@@ -40,9 +40,9 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     ```
     We render normal maps for main_xml(1) and mainDiffMat_xml(1), and depth maps for main_xml(1).
 
-1. [Mask]() and [Mask.zip](): The 480 × 460 grey scale mask (immask_\*.png) for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for main_xml(1) and mainDiffLight_xml(1). 
+4. **[Mask]()** and **[Mask.zip]()**: The 480 × 460 grey scale mask (immask_\*.png) for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for main_xml(1) and mainDiffLight_xml(1). 
 
-1. [SVLighting](): The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_\*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
+1. **[SVLighting](): The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_\*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
     ```python
     # Read the envmap of resolution 1920 x 5120 x 3 in RGB format 
     env = cv2.imread('imenv_1', -1)[:, :, ::-1]
