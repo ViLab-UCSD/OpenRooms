@@ -85,7 +85,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 
 
 ## Dataset Creation 
-1. **[GPU renderer]()**: Our Optix-based GPU path tracer is available for downloading. 
+1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: Our Optix-based GPU path tracer is available for downloading. Please refer to the github repository for detailed instructions. 
 2. **[Tileable texture synthesis]()** 
 3. ** 
 
