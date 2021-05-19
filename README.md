@@ -67,19 +67,19 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 10. **[SemanticLabel]()** and **[SemanticLabel.zip]()**: The 480 × 640 semantic segmentation label `imsemLabel_*.npy`. We provide semantic labels for 45 classes of commonly seen objects and layout for indoor scenes. The 45 classes can be found in `semanticLabels.txt`. We only render the semantic labels for `main_xml(1)`. 
 
 11. **[LightSource]()** and **[LightSource.zip]()**: The light source information, including geometry, shadow and direct shading of each light source. In each scene directory, `light_x` directory corresponds to `im_x.hdr`, where x = 0, 1, 2, 3 ... In each `light_x` directory, you will see files with numbers in their names. The numbers correspond to the light source ID, i.e. if the IDs are from 0 to 4, then there are 5 light sources in this scene. 
-    * **Geometry**: We provide geometry annotation for windows and lamps (box_\*.dat) for main_xml(1) only. To read the annotation, we can use the following python commmands. 
+    * **Geometry**: We provide geometry annotation for windows and lamps `box_*.dat` for `main_xml(1)` only. To read the annotation, we can use the following python commmands. 
         ```python
         with open('box_0.dat', 'rb')  as fIn:
             info = pickle.load(fIn )
         ```
         There are 3 items saved in the dictionary, which we list blow.
         * **isWindow**: True if the light source is a window, false if the light source is a lamp. 
-        * **box3D**: The 3D bounding box of the light source, including center (center), orientation (xAxis, yAxis, zAxis) and size (xLen, yLen, zLen). 
-        * **box2D**: The 2D bounding box of the light source on the image plane (x1, y1, x2, y2). 
-    * **Mask**: The 120 × 160 2D binary masks for light sources (mask\*.png). We only provide the masks for main_xml(1). 
-    * **Direct shading**: The 120 × 160 direct shading for each light source (imDS\*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
-    * **Direct shading without occlusion**: The 120 × 160 direct shading with outocclusion for each light source (imNoOcclu\*.rgbe). We provide the direction shading for main_xml(1) and mainDiffLight_xml(1). 
-    * **Shadow**: The 120 × 160 shadow maps for each light source (imShadow\*.png). We render the shadow map for main_xml(1) only. 
+        * **box3D**: The 3D bounding box of the light source, including center `center`, orientation `xAxis, yAxis, zAxis` and size `xLen, yLen, zLen`. 
+        * **box2D**: The 2D bounding box of the light source on the image plane `x1, y1, x2, y2`. 
+    * **Mask**: The 120 × 160 2D binary masks for light sources `mask*.png`. We only provide the masks for `main_xml(1)`. 
+    * **Direct shading**: The 120 × 160 direct shading for each light source `imDS*.rgbe`. We provide the direction shading for `main_xml(1)` and `mainDiffLight_xml(1)`. 
+    * **Direct shading without occlusion**: The 120 × 160 direct shading with outocclusion for each light source `imNoOcclu*.rgbe`. We provide the direction shading for `main_xml(1)` and `mainDiffLight_xml(1)`. 
+    * **Shadow**: The 120 × 160 shadow maps for each light source `imShadow*.png`. We render the shadow map for `main_xml(1)` only. 
 
 ## Dataset Creation 
 1. **[GPU renderer]()**: Our Optix-based GPU path tracer is available for downloading. 
