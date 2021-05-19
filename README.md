@@ -87,12 +87,12 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 ## Dataset Creation 
 1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: Our Optix-based GPU path tracer is available for downloading. Please refer to the github repository for detailed instructions. 
 2. **[Tileable texture synthesis]()** 
-3. ** 
+3. **[Spherical gaussian optimization](https://github.com/lzqsd/SphericalGaussianOptimization)**
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
 ## Applications
-1. **[Inverse Rendering]()**
+1. **[Inverse Rendering](https://github.com/lzqsd/InverseRenderingOfIndoorScene)**
 2. **[Robotics]()**
 
 ## Related Datasets
