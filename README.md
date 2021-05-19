@@ -86,14 +86,14 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 
 ## Dataset Creation 
 1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: Our Optix-based GPU path tracer is available for downloading. Please refer to the github repository for detailed instructions. 
-2. **[Tileable texture synthesis]()** 
+2. **[Tileable texture synthesis](https://github.com/lzqsd/TileableTextureSynthesis)** 
 3. **[Spherical gaussian optimization](https://github.com/lzqsd/SphericalGaussianOptimization)**
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
 ## Applications
 1. **[Inverse Rendering](https://github.com/lzqsd/InverseRenderingOfIndoorScene)**
-2. **[Robotics]()**
+2. **[Robotics]()**: Our robotics application will come soon. 
 
 ## Related Datasets
 The OpenRooms dataset is built on the datasets listed below. We thank their creators for the excellent contribution. Please refer to prior datasets for license issues and terms of use if you hope to use them to create your own dataset. 
