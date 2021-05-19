@@ -5,25 +5,25 @@
 ## Dataset Overview
 This is the webpage for downloading the [OpenRooms](https://vilab-ucsd.github.io/ucsd-openrooms/) dataset. We will first introduce the rendered images and various ground-truths. Later, we will introduce how to render your own images based on the OpenRooms dataset creation pipeline. For each type of data, we offer two kinds of formats, zip files and individual folders, so that users can choose whether to download the whole dataset more efficiently or download individual folders for different scenes. To download the file, we recommend the tool [Rclone](https://rclone.org/), otherwise users may suffer from slow downloading speed and instability. If you have any questions, please email to openroomsdataset@gmail.com. 
 
-We render six versions of images for all the scenes. Those rendered results are saved in 6 folders: `main_xml`, `main_xml1`, `mainDiffMat_xml`, `mainDiffMat_xml1`, `mainDiffLight_xml` and `mainDiffLight_xml1`. All 6 versions are built with the same CAD models. `main_xml`, `mainDiffMat_xml`, `mainDiffLight_xml` share one set of camera views while `main_xml1`, `mainDiffMat_xml1` and `mainDiffLight_xml1` share the other set of camera views. `main_xml(1)` and `mainDiffMat_xml(1)` have the same lighting but different materials while `main_xml(1)` and `mainDiffLight_xml(1)` have the same materials but different lighting. Both the lighting and material configuration of main_xml and main_xml1 are different. We believe this configuration can potentially help us develope novel applications for image editing. An example scene from main_xml, mainDiffMat_xml and mainDiffLight_xml is shown in the video sequence below. 
+We render six versions of images for all the scenes. Those rendered results are saved in 6 folders: `main_xml`, `main_xml1`, `mainDiffMat_xml`, `mainDiffMat_xml1`, `mainDiffLight_xml` and `mainDiffLight_xml1`. All 6 versions are built with the same CAD models. `main_xml`, `mainDiffMat_xml`, `mainDiffLight_xml` share one set of camera views while `main_xml1`, `mainDiffMat_xml1` and `mainDiffLight_xml1` share the other set of camera views. `main_xml(1)` and `mainDiffMat_xml(1)` have the same lighting but different materials while `main_xml(1)` and `mainDiffLight_xml(1)` have the same materials but different lighting. Both the lighting and material configuration of `main_xml` and `main_xml1` are different. We believe this configuration can potentially help us develope novel applications for image editing. An example scene from `main_xml`, `mainDiffMat_xml` and `mainDiffLight_xml` is shown in the video sequence below. 
 
 ## Rendered Images and Ground-truths
 All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo]() and [Demo.zip](). 
 
-1. **[Images]()** and **[Images.zip]()**: The 480 × 640 HDR images `im_\*.hdr`, which can be read with the python command. 
+1. **[Images]()** and **[Images.zip]()**: The 480 × 640 HDR images `im_*.hdr`, which can be read with the python command. 
     ```python
     im = cv2.imread('im_1.hdr', -1)[:, :, ::-1]
     ```
-    We render images for main_xml(1), mainDiffMat_xml(1) and mainDiffLight_xml(1).
+    We render images for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`.
 
-2. **[Material]()** and **[Material.zip]()**: The 480 × 640 diffuse albedo maps (imbaseColor_\*.png) and roughness map (imroughness_\*.png). Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
+2. **[Material]()** and **[Material.zip]()**: The 480 × 640 diffuse albedo maps `imbaseColor_*.png` and roughness map `imroughness_*.png`. Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly. 
     ```python
     im = cv2.imread('imbaseColor_1.hdr')[:, :, ::-1]
     im = (im.astype(np.float32 ) / 255.0) ** (2.2)
     ```
-    We only render the diffuse albedo maps and roughness maps for main_xml(1) and mainDiffMat_xml(1) because mainDiffLight_xml(1) share the same material maps with the main_xml(1).
+    We only render the diffuse albedo maps and roughness maps for `main_xml(1)` and `mainDiffMat_xml(1)` because `mainDiffLight_xml(1)` share the same material maps with the `main_xml(1)`.
 
-3. **[Geometry]()** and **[Geometry.zip]()**: The 480 × 640 normal maps (imnomral_\*.png) and depth maps (imdepth_\*.dat). The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
+3. **[Geometry]()** and **[Geometry.zip]()**: The 480 × 640 normal maps `imnomral_*.png` and depth maps `imdepth_*.dat`. The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands. 
     ```python
     with open('imdepth_1.dat', 'rb') as fIn:
         # Read the height and width of depth
@@ -38,11 +38,11 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
             dtype=np.float32 )
         depth = depth.reshape(height, width)
     ```
-    We render normal maps for main_xml(1) and mainDiffMat_xml(1), and depth maps for main_xml(1).
+    We render normal maps for `main_xml(1)` and `mainDiffMat_xml(1)`, and depth maps for `main_xml(1)`.
 
-4. **[Mask]()** and **[Mask.zip]()**: The 480 × 460 grey scale mask (immask_\*.png) for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for main_xml(1) and mainDiffLight_xml(1). 
+4. **[Mask]()** and **[Mask.zip]()**: The 480 × 460 grey scale mask `immask_*.png` for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for `main_xml(1)` and `mainDiffLight_xml(1)`. 
 
-5. **[SVLighting]()**: The (120 × 16) × (160 × 32) per-pixel environment maps (imenv_\*.hdr). The spatial resolution is 120 × 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
+5. **[SVLighting]()**: The (120 × 16) × (160 × 32) per-pixel environment maps `imenv_*.hdr`. The spatial resolution is 120 x 160 while the environment map resolution is 16 & times 32. To read the per-pixel environment maps, we can use the following python commands. 
     ```python
     # Read the envmap of resolution 1920 x 5120 x 3 in RGB format 
     env = cv2.imread('imenv_1', -1)[:, :, ::-1]
