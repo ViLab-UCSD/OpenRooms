@@ -1,6 +1,6 @@
 # OpenRooms Dataset Release
 
-Zhengqin Li, Ting-Wei Yu, Shen Sang, Sarah Wang, Meng Song, Yuhan Liu, Yu-Ying Yeh, Rui Zhu, Nitesh Gundavarapu, Jia Shi, Sai Bi, Zexiang Xu, Hong-Xing Yu, Kalyan Sunkavalli, Miloš Hašan, Ravi Ramamoorthi, Manmohan Chandraker
+[Zhengqin Li](), Ting-Wei Yu, Shen Sang, Sarah Wang, Meng Song, Yuhan Liu, Yu-Ying Yeh, Rui Zhu, Nitesh Gundavarapu, Jia Shi, Sai Bi, Zexiang Xu, Hong-Xing Yu, Kalyan Sunkavalli, Miloš Hašan, Ravi Ramamoorthi, Manmohan Chandraker
 
 ## Dataset Overview
 This is the webpage for downloading the OpenRooms dataset. We will first introduce the rendered images and various ground-truths. Later, we will introduce how to render your own images based on the OpenRooms dataset creation pipeline. For each type of data, we offer two kinds of formats, zip files and individual folders, so that users can choose whether to download the whole dataset more efficiently or download individual folders for different scenes. To download the file, we recommend the tool Rclone, otherwise users may suffer from slow downloading speed and instability. If you have any questions, please email to openroomsdataset@gmail.com. 
