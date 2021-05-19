@@ -85,9 +85,9 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 
 
 ## Dataset Creation 
-1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: Our Optix-based GPU path tracer is available for downloading. Please refer to the github repository for detailed instructions. 
-2. **[Tileable texture synthesis](https://github.com/lzqsd/TileableTextureSynthesis)** 
-3. **[Spherical gaussian optimization](https://github.com/lzqsd/SphericalGaussianOptimization)**
+1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: The Optix-based GPU path tracer for rendering. Please refer to the github repository for detailed instructions. 
+2. **[Tileable texture synthesis](https://github.com/lzqsd/TileableTextureSynthesis)**: The tielable texture synthesis code to make sure that the SVBRDF maps are tileable. Please refer to the github repository for more details. 
+3. **[Spherical gaussian optimization](https://github.com/lzqsd/SphericalGaussianOptimization)**: The code to fit per-pixel environment map with spherical Gaussian lobes, using LBFGS optimization. Please refer to the github repository for detailed instructions. 
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
