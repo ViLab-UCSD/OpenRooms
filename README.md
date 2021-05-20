@@ -11,7 +11,7 @@ This is the webpage for downloading the [OpenRooms](https://vilab-ucsd.github.io
 
 We render six versions of images for all the scenes. Those rendered results are saved in 6 folders: `main_xml`, `main_xml1`, `mainDiffMat_xml`, `mainDiffMat_xml1`, `mainDiffLight_xml` and `mainDiffLight_xml1`. All 6 versions are built with the same CAD models. `main_xml`, `mainDiffMat_xml`, `mainDiffLight_xml` share one set of camera views while `main_xml1`, `mainDiffMat_xml1` and `mainDiffLight_xml1` share the other set of camera views. `main_xml(1)` and `mainDiffMat_xml(1)` have the same lighting but different materials while `main_xml(1)` and `mainDiffLight_xml(1)` have the same materials but different lighting. Both the lighting and material configuration of `main_xml` and `main_xml1` are different. We believe this configuration can potentially help us develope novel applications for image editing. Two example scenes from `main_xml`, `mainDiffMat_xml` and `mainDiffLight_xml` are shown in the below. 
 
-![pipeline](https://vilab-ucsd.github.io/ucsd-openrooms/index_files/config.png)
+![config](https://vilab-ucsd.github.io/ucsd-openrooms/index_files/config.png)
 
 ## Rendered Images and Ground-truths
 All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](README.md). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo](README.md) and [Demo.zip](README.md). 
