@@ -1,9 +1,12 @@
 # OpenRooms Dataset Release
 
 [Zhengqin Li](https://sites.google.com/a/eng.ucsd.edu/zhengqinli), [Ting-Wei Yu](https://www.linkedin.com/in/ting-wei-yu/), [Shen Sang](https://www.linkedin.com/in/shen-sang-ab6b0217a/), [Sarah Wang](https://www.linkedin.com/in/sawang07/), [Meng Song](https://sites.google.com/site/mengsong1130/), Yuhan Liu, [Yu-Ying Yeh](https://yuyingyeh.github.io/), [Rui Zhu](https://jerrypiglet.github.io/), [Nitesh Gundavarapu](https://scholar.google.com/citations?user=v19p_0oAAAAJ&hl=en), Jia Shi, [Sai Bi](https://sai-bi.github.io/), [Zexiang Xu](https://cseweb.ucsd.edu/~zex014/), [Hong-Xing Yu](https://kovenyu.com/), [Kalyan Sunkavalli](http://www.kalyans.org/), [Miloš Hašan](http://www.miloshasan.net/), [Ravi Ramamoorthi](http://cseweb.ucsd.edu/~ravir/), [Manmohan Chandraker](https://cseweb.ucsd.edu/~mkchandraker/)
-![pipeline](https://vilab-ucsd.github.io/ucsd-openrooms/index_files/teaser.png)
+
 
 ## Dataset Overview
+
+![pipeline](https://vilab-ucsd.github.io/ucsd-openrooms/index_files/teaser.png)
+
 This is the webpage for downloading the [OpenRooms](https://vilab-ucsd.github.io/ucsd-openrooms/) dataset. We will first introduce the rendered images and various ground-truths. Later, we will introduce how to render your own images based on the OpenRooms dataset creation pipeline. For each type of data, we offer two kinds of formats, zip files and individual folders, so that users can choose whether to download the whole dataset more efficiently or download individual folders for different scenes. To download the file, we recommend the tool [Rclone](https://rclone.org/), otherwise users may suffer from slow downloading speed and instability. If you have any questions, please email to openroomsdataset@gmail.com. 
 
 We render six versions of images for all the scenes. Those rendered results are saved in 6 folders: `main_xml`, `main_xml1`, `mainDiffMat_xml`, `mainDiffMat_xml1`, `mainDiffLight_xml` and `mainDiffLight_xml1`. All 6 versions are built with the same CAD models. `main_xml`, `mainDiffMat_xml`, `mainDiffLight_xml` share one set of camera views while `main_xml1`, `mainDiffMat_xml1` and `mainDiffLight_xml1` share the other set of camera views. `main_xml(1)` and `mainDiffMat_xml(1)` have the same lighting but different materials while `main_xml(1)` and `mainDiffLight_xml(1)` have the same materials but different lighting. Both the lighting and material configuration of `main_xml` and `main_xml1` are different. We believe this configuration can potentially help us develope novel applications for image editing. Two example scenes from `main_xml`, `mainDiffMat_xml` and `mainDiffLight_xml` is shown in the below. 
