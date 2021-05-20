@@ -92,7 +92,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon. 
 
 ## Applications
-1. **[Inverse Rendering](https://github.com/lzqsd/InverseRenderingOfIndoorScene)**
+1. **[Inverse Rendering](https://github.com/lzqsd/InverseRenderingOfIndoorScene)**: Trained on our dataset, we achieved state-of-the-arts on some inverse rendering metrics, especially the lighting estimation. Please refer to our github repository for the training and testing code. 
 2. **[Robotics](README.md)**: Our robotics applications will come soon. 
 
 ## Related Datasets
