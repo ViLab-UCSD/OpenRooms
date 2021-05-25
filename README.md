@@ -108,5 +108,6 @@ The OpenRooms dataset is built on the datasets listed below. We thank their crea
 1. **[Laval outdoor lighting dataset](http://outdoor.hdrdb.com/)**: HDR outdoor environment maps 
 1. **[HDRI Haven lighting dataset](https://hdrihaven.com/)**: HDR outdoor environment maps 
 1. **[PartNet dataset](https://partnet.cs.stanford.edu/)**: CAD models 
+2. **[Adobe Stock Materials](https://stock.adobe.com/search?filters%5Bcontent_type%3A3d%5D=1&filters%5B3d_type_id%5D%5B0%5D=3&load_type=3d+lp)**: High-quality microfacet SVBRDF texture maps. Please license materials from the Adobe website. 
 
 
