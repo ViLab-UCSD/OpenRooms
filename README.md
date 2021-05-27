@@ -13,6 +13,8 @@ We render six versions of images for all the scenes. Those rendered results are 
 
 ![config](https://vilab-ucsd.github.io/ucsd-openrooms/index_files/config.png)
 
+**News**: We currently only release the rendered images of the dataset. All ground-truths will be released in a few days. The dataset creation pipeline will also be released soon. 
+
 ## Rendered Images and Ground-truths
 All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](README.md). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo](README.md) and [Demo.zip](README.md). 
 
