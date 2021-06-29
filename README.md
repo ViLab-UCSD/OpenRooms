@@ -5,7 +5,7 @@
 ## News
 \[06/29/21\]. We released two demo scenes with all ground-truths ([Demo](https://drive.google.com/drive/folders/1SNgrVUhXrKTt8pftdQpUj80mXtK2FyeB?usp=sharing) and [Demo.zip](https://drive.google.com/file/d/1910EC4IIoR4fkdqSnd2vk2-A_G6cxTpi/view?usp=sharing)). Please use the two scenes to determine usage for your applications.
 
-\[05/19/21\]. We released all rendered images ([Images](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing) and [Images.zip](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)). All ground-truths will be released soon.
+\[05/19/21\]. We released all rendered images ([Images](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing) and [Images.zip](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)).
 
 ## About
 This is the release webpage for the [OpenRooms](https://vilab-ucsd.github.io/ucsd-openrooms/) dataset. We first introduce the rendered images and various ground-truths. Next, we introduce how to render your own images based on the OpenRooms dataset creation framework. For each type of data, we offer two kinds of formats, zip files and individual folders, so users may choose whether to download the whole dataset more efficiently or download individual folders for different scenes. We recommend using [Rclone](https://rclone.org/) to avoid slow or unstable downloads. 
@@ -112,12 +112,12 @@ The CAD models, environment maps, materials and code required to recreate the da
 2. **[Robotics](README.md)**: Our robotics applications will come soon. 
 
 ## Related Datasets
-The OpenRooms dataset is built on the datasets listed below. We thank their creators for the excellent contribution. Please refer to prior datasets for license issues and terms of use if you hope to use them to create your own dataset. 
+The OpenRooms dataset is built on several prior works, as noted below. Please refer to them for the respective license details and terms of use when creating your own dataset using OpenRooms. 
 1. **[ScanNet dataset](http://www.scan-net.org/)**: The real 3D scans of indoor scenes. 
 1. **[Scan2cad dataset](https://github.com/skanti/Scan2CAD)**: The alignment of CAD models to the scanned point clouds. 
 1. **[Laval outdoor lighting dataset](http://outdoor.hdrdb.com/)**: HDR outdoor environment maps 
 1. **[HDRI Haven lighting dataset](https://hdrihaven.com/)**: HDR outdoor environment maps 
 1. **[PartNet dataset](https://partnet.cs.stanford.edu/)**: CAD models 
-2. **[Adobe Stock](https://stock.adobe.com/search?filters%5Bcontent_type%3A3d%5D=1&filters%5B3d_type_id%5D%5B0%5D=3&load_type=3d+lp)**: High-quality microfacet SVBRDF texture maps. Please license materials from the Adobe website. 
+2. **[Adobe Stock](https://stock.adobe.com/search?filters%5Bcontent_type%3A3d%5D=1&filters%5B3d_type_id%5D%5B0%5D=3&load_type=3d+lp)**: High-quality microfacet SVBRDF texture maps. Please license the materials from Adobe Stock. 
 
 
