@@ -4,6 +4,7 @@
 
 ## News
 \[06/29/21\]. We released two demo scenes with all ground-truths ([Demo](https://drive.google.com/drive/folders/1SNgrVUhXrKTt8pftdQpUj80mXtK2FyeB?usp=sharing) and [Demo.zip](https://drive.google.com/file/d/1910EC4IIoR4fkdqSnd2vk2-A_G6cxTpi/view?usp=sharing)). Please use the two scenes to determine usage for your applications.
+
 \[05/19/21\]. We released all rendered images ([Images](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing) and [Images.zip](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)). All ground-truths will be released soon.
 
 ## About
