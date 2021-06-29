@@ -20,7 +20,7 @@ We render six versions of images for all the scenes. Those rendered results are 
 **News**: We currently only release the rendered images of the dataset. All ground-truths will be released in a few days. The dataset creation pipeline will also be released soon. 
 
 ## Rendered Images and Ground-truths
-All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](README.md). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo](README.md) and [Demo.zip](README.md). 
+All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](README.md). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo](https://drive.google.com/drive/folders/1SNgrVUhXrKTt8pftdQpUj80mXtK2FyeB?usp=sharing) and [Demo.zip](https://drive.google.com/file/d/1910EC4IIoR4fkdqSnd2vk2-A_G6cxTpi/view?usp=sharing). 
 
 1. **[Images](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)** and **[Images.zip](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)**: The 480 × 640 HDR images `im_*.hdr`, which can be read with the python command. 
     ```python
