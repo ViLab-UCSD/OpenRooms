@@ -94,7 +94,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
         * **box2D**: The 2D bounding box of the light source on the image plane `x1, y1, x2, y2`. 
     * **Mask**: The 120 × 160 2D binary masks for light sources `mask*.png`. We only provide the masks for `main_xml(1)`. 
     * **Direct shading**: The 120 × 160 direct shading for each light source `imDS*.rgbe`. We provide the direction shading for `main_xml(1)` and `mainDiffLight_xml(1)`. 
-    * **Direct shading without occlusion**: The 120 × 160 direct shading with outocclusion for each light source `imNoOcclu*.rgbe`. We provide the direction shading for `main_xml(1)` and `mainDiffLight_xml(1)`. 
+    * **Direct shading without occlusion**: The 120 × 160 direct shading without occlusion for each light source `imNoOcclu*.rgbe`. We provide the direction shading for `main_xml(1)` and `mainDiffLight_xml(1)`. 
     * **Shadow**: The 120 × 160 shadow maps for each light source `imShadow*.png`. We render the shadow map for `main_xml(1)` only. 
 
 12. **[Friction](README.md)** and **[Friction.zip](README.md)**: The friction coefficients computed from our SVBRDF following the method proposed by [Zhang et al.](https://arxiv.org/abs/1603.07998) We compute the friction coefficients for `main_xml(1)` and `mainDiffLight_xml(1)`
