@@ -66,7 +66,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     env = env.reshape(120, 16, 160, 32, 3)
     env = env.transpose(0, 2, 1, 3, 4)
     ```
-    We render per-pixel environment maps for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`. Since the total size of per-pixel environment maps is 4.0 TB, we do not provide an extra .zip format for downloading. Please consider using the tool [Rclone](https://rclone.org/) if you hope to download all the per-pixel environment maps.
+    We render per-pixel environment maps for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`. 
 
 6. **[SVSG](README.md)** and **[SVSG.zip](README.md)**: The ground-truth spatially-varying spherical Gaussian (SG) parameters `imsgEnv_*.h5`, computed from this optimization [code](https://github.com/lzqsd/SphericalGaussianOptimization). We generate the ground-truth SG parameters for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`. For the detailed format, please refer to the optimization [code](https://github.com/lzqsd/SphericalGaussianOptimization). 
 
