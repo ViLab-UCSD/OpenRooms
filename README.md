@@ -101,6 +101,8 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 
 12. **[Friction](README.md)** and **[Friction.zip](README.md)**: The friction coefficients computed from our SVBRDF following the method proposed by [Zhang et al.](https://arxiv.org/abs/1603.07998) We compute the friction coefficients for `main_xml(1)` and `mainDiffLight_xml(1)`
 
+13. **[train.txt](README.md)** and **[test.txt](README.md)**: The training/testing split. We use 1178 scenes for training and 109 scenes for testing.  
+
 
 ## Dataset Creation 
 1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: The Optix-based GPU path tracer for rendering. Please refer to the github repository for detailed instructions. 
