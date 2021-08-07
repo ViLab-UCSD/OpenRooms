@@ -3,6 +3,8 @@
 [Zhengqin Li](https://sites.google.com/a/eng.ucsd.edu/zhengqinli), [Ting-Wei Yu](https://www.linkedin.com/in/ting-wei-yu/), [Shen Sang](https://www.linkedin.com/in/shen-sang-ab6b0217a/), [Sarah Wang](https://www.linkedin.com/in/sawang07/), [Meng Song](https://sites.google.com/site/mengsong1130/), Yuhan Liu, [Yu-Ying Yeh](https://yuyingyeh.github.io/), [Rui Zhu](https://jerrypiglet.github.io/), [Nitesh Gundavarapu](https://scholar.google.com/citations?user=v19p_0oAAAAJ&hl=en), Jia Shi, [Sai Bi](https://sai-bi.github.io/), [Zexiang Xu](https://cseweb.ucsd.edu/~zex014/), [Hong-Xing Yu](https://kovenyu.com/), [Kalyan Sunkavalli](http://www.kalyans.org/), [Miloš Hašan](http://www.miloshasan.net/), [Ravi Ramamoorthi](http://cseweb.ucsd.edu/~ravir/), [Manmohan Chandraker](https://cseweb.ucsd.edu/~mkchandraker/)
 
 ## News
+\[08/07/21\]. Please send an email to openroomsdataset@gmail.com if you hope to get the newest update and the download links. 
+
 \[06/29/21\]. We released two demo scenes with all ground-truths ([Demo](https://drive.google.com/drive/folders/1SNgrVUhXrKTt8pftdQpUj80mXtK2FyeB?usp=sharing) and [Demo.zip](https://drive.google.com/file/d/1910EC4IIoR4fkdqSnd2vk2-A_G6cxTpi/view?usp=sharing)). Please use the two scenes to determine usage for your applications.
 
 \[05/19/21\]. We released all rendered images ([Images](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing) and [Images.zip](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)).
