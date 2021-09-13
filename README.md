@@ -62,7 +62,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 
 4. **[Mask](https://drive.google.com/drive/folders/1GkLnZTIOSeIeewol0wyllP3opdMxdH1i?usp=sharing)** and **[Mask.zip](https://drive.google.com/file/d/1TxejwEi7v7wxTSJjXZnTAX2WhMK1MZF2/view?usp=sharing)**: The 480 × 460 grey scale mask `immask_*.png` for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for `main_xml(1)` and `mainDiffLight_xml(1)`.
 
-5. **[SVLighting](https://drive.google.com/drive/folders/12Y13IVJcxeu8IblB9OIfQDiy3CEIQHeI?usp=sharing)** and **[SVLighting.zip](https://drive.google.com/drive/folders/12Y13IVJcxeu8IblB9OIfQDiy3CEIQHeI?usp=sharing)**: The (120 × 16) × (160 × 32) per-pixel environment maps `imenv_*.hdr`. The spatial resolution is 120 x 160 while the environment map resolution is 16 x 32. To read the per-pixel environment maps, we can use the following python commands.
+5. **[SVLighting](https://drive.google.com/drive/folders/12Y13IVJcxeu8IblB9OIfQDiy3CEIQHeI?usp=sharing)** and **[SVLighting.zip](https://drive.google.com/file/d/1ibDk2LOOPelZal13E0xdyLgzudNqB44D/view?usp=sharing)**: The (120 × 16) × (160 × 32) per-pixel environment maps `imenv_*.hdr`. The spatial resolution is 120 x 160 while the environment map resolution is 16 x 32. To read the per-pixel environment maps, we can use the following python commands.
     ```python
     # Read the envmap of resolution 1920 x 5120 x 3 in RGB format
     env = cv2.imread('imenv_1', -1)[:, :, ::-1]
