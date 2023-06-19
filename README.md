@@ -114,7 +114,7 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 5. **[Layout](https://drive.google.com/file/d/1OOc_55C0YkEPC_s81i0s8jf8xEp1v3YR/view?usp=sharing)**:
 6. **[Scene configuration files and camera poses](https://drive.google.com/file/d/1d2CTLZeE1vya8mf0S0V8NDXGEak4Rx02/view?usp=sharing)**:
 7. **[Environment maps](https://drive.google.com/file/d/13l-eNkozkMIvdpYa4RdmRkVXoMEXZmuu/view?usp=drive_link)**:
-8. **[Tutorial](https://drive.google.com/file/d/1d751UulbaCMqo0cKo_HDPU2UyVKWWwP1/view?usp=drive_web)**
+8. **[Tutorial](https://drive.google.com/file/d/1d751UulbaCMqo0cKo_HDPU2UyVKWWwP1/view?usp=drive_web)**:
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon.
 
