@@ -110,6 +110,11 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
 1. **[GPU renderer](https://github.com/lzqsd/OptixRenderer)**: The Optix-based GPU path tracer for rendering. Please refer to the github repository for detailed instructions.
 2. **[Tileable texture synthesis](https://github.com/lzqsd/TileableTextureSynthesis)**: The tielable texture synthesis code to make sure that the SVBRDF maps are tileable. Please refer to the github repository for more details.
 3. **[Spherical gaussian optimization](https://github.com/lzqsd/SphericalGaussianOptimization)**: The code to fit per-pixel environment map with spherical Gaussian lobes, using LBFGS optimization. Please refer to the github repository for detailed instructions.
+4. **[Furniture geometry](https://drive.google.com/file/d/1l8nyY8bgslPqz41e1nWPTJTWNockqIQV/view?usp=drive_link)**:
+5. **[Layout](https://drive.google.com/file/d/1OOc_55C0YkEPC_s81i0s8jf8xEp1v3YR/view?usp=sharing)**:
+6. **[Scene configuration files and camera poses](https://drive.google.com/file/d/1d2CTLZeE1vya8mf0S0V8NDXGEak4Rx02/view?usp=sharing)**:
+7. **[Environment maps](https://drive.google.com/file/d/13l-eNkozkMIvdpYa4RdmRkVXoMEXZmuu/view?usp=drive_link)**:
+8. **[Tutorial](https://drive.google.com/file/d/1d751UulbaCMqo0cKo_HDPU2UyVKWWwP1/view?usp=drive_web)**
 
 The CAD models, environment maps, materials and code required to recreate the dataset will be released soon.
 
