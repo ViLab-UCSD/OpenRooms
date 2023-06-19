@@ -3,6 +3,8 @@
 [Zhengqin Li](https://sites.google.com/a/eng.ucsd.edu/zhengqinli), [Ting-Wei Yu](https://www.linkedin.com/in/ting-wei-yu/), [Shen Sang](https://www.linkedin.com/in/shen-sang-ab6b0217a/), [Sarah Wang](https://www.linkedin.com/in/sawang07/), [Meng Song](https://sites.google.com/site/mengsong1130/), Yuhan Liu, [Yu-Ying Yeh](https://yuyingyeh.github.io/), [Rui Zhu](https://jerrypiglet.github.io/), [Nitesh Gundavarapu](https://scholar.google.com/citations?user=v19p_0oAAAAJ&hl=en), Jia Shi, [Sai Bi](https://sai-bi.github.io/), [Zexiang Xu](https://cseweb.ucsd.edu/~zex014/), [Hong-Xing Yu](https://kovenyu.com/), [Kalyan Sunkavalli](http://www.kalyans.org/), [Miloš Hašan](http://www.miloshasan.net/), [Ravi Ramamoorthi](http://cseweb.ucsd.edu/~ravir/), [Manmohan Chandraker](https://cseweb.ucsd.edu/~mkchandraker/)
 
 ## News
+\[06/18/23]. We released all scene configuration xml files, camera poses, furniture and layout geometry.
+
 \[09/10/21\]. All the rendered ground-truths are available for downloading. 
 
 \[08/07/21\]. Please send an email to [OpenRoomsDataset@gmail.com](README.md) if you hope to receive the newest update. 
