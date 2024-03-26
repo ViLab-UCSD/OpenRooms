@@ -3,6 +3,8 @@
 [Zhengqin Li](https://sites.google.com/a/eng.ucsd.edu/zhengqinli), [Ting-Wei Yu](https://www.linkedin.com/in/ting-wei-yu/), [Shen Sang](https://www.linkedin.com/in/shen-sang-ab6b0217a/), [Sarah Wang](https://www.linkedin.com/in/sawang07/), [Meng Song](https://sites.google.com/site/mengsong1130/), Yuhan Liu, [Yu-Ying Yeh](https://yuyingyeh.github.io/), [Rui Zhu](https://jerrypiglet.github.io/), [Nitesh Gundavarapu](https://scholar.google.com/citations?user=v19p_0oAAAAJ&hl=en), Jia Shi, [Sai Bi](https://sai-bi.github.io/), [Zexiang Xu](https://cseweb.ucsd.edu/~zex014/), [Hong-Xing Yu](https://kovenyu.com/), [Kalyan Sunkavalli](http://www.kalyans.org/), [Miloš Hašan](http://www.miloshasan.net/), [Ravi Ramamoorthi](http://cseweb.ucsd.edu/~ravir/), [Manmohan Chandraker](https://cseweb.ucsd.edu/~mkchandraker/)
 
 ## News
+\[03/26/24]. We update the download link and put OpenRooms on a new data server. 
+
 \[06/18/23]. We released all scene configuration xml files, camera poses, furniture and layout geometry.
 
 \[09/10/21\]. All the rendered ground-truths are available for downloading. 
@@ -27,25 +29,23 @@ We render six versions of images for all the scenes. Those rendered results are 
 
 ![config](https://vilab-ucsd.github.io/ucsd-openrooms/index_files/config.png)
 
-**News**: We currently only release the rendered images of the dataset. All ground-truths will be released in a few days. The dataset creation pipeline will also be released soon.
-
 ## Rendered Images and Ground-truths
-All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](https://drive.google.com/drive/folders/1Z61QLpK1rslnPMPs0QYj5rEjqNzCRzYd?usp=sharing). In the following, we will detail each type of rendered data and how to read and interpret them. Two example scenes with images and all ground-truths are included in [Demo](https://drive.google.com/drive/folders/1SNgrVUhXrKTt8pftdQpUj80mXtK2FyeB?usp=sharing) and [Demo.zip](https://drive.google.com/file/d/1910EC4IIoR4fkdqSnd2vk2-A_G6cxTpi/view?usp=sharing). The training/testing split of the scenes can be found in [train.txt](https://drive.google.com/file/d/1ZhHaOPtnICGnEp9cgXT0HPaEm2SkdIJJ/view?usp=sharing) and [test.txt](https://drive.google.com/file/d/11HNfjg50Ku5ufEwiLzvRJ_SVzsk0eYU2/view?usp=sharing). 
+All rendered images and the corresponding ground-truths are saved in folder [data/rendering/data/](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/). In the following, we will detail each type of rendered data and how to read and interpret them. The training/testing split of the scenes can be found in [train.txt](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/train.txt) and [test.txt](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/test.txt). 
 
-1. **[Image](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing)** and **[Image.zip](https://drive.google.com/file/d/11046xQ9L6SkahoxF0W3cn__pmFZQYKyv/view?usp=sharing)**: The 480 × 640 HDR images `im_*.hdr`, which can be read with the python command.
+1. **[Image](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Image/)** and **[Image.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Image.zip)**: The 480 × 640 HDR images `im_*.hdr`, which can be read with the python command.
     ```python
     im = cv2.imread('im_1.hdr', -1)[:, :, ::-1]
     ```
     We render images for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`.
 
-2. **[Material](https://drive.google.com/drive/folders/1E8wMJHDqnN7rArQH28_alTe870078Qpp?usp=sharing)** and **[Material.zip](https://drive.google.com/file/d/1yPFzSMxStjZtPN2vC43-p45Gq9NGFNPF/view?usp=sharing)**: The 480 × 640 diffuse albedo maps `imbaseColor_*.png` and roughness map `imroughness_*.png`. Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly.
+2. **[Material](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Material/)** and **[Material.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Material.zip)**: The 480 × 640 diffuse albedo maps `imbaseColor_*.png` and roughness map `imroughness_*.png`. Note that the diffuse albedo map is saved in sRGB space. To load it into linear RGB space, we can use the following python commands. The roughness map is saved in linear space and can be read directly.
     ```python
     im = cv2.imread('imbaseColor_1.hdr')[:, :, ::-1]
     im = (im.astype(np.float32 ) / 255.0) ** (2.2)
     ```
     We only render the diffuse albedo maps and roughness maps for `main_xml(1)` and `mainDiffMat_xml(1)` because `mainDiffLight_xml(1)` share the same material maps with the `main_xml(1)`.
 
-3. **[Geometry](https://drive.google.com/drive/folders/1i7IMlGf_LDjuHbM6sutwOO5LjzXcbVN2?usp=sharing)** and **[Geometry.zip](https://drive.google.com/file/d/1FRPMKIDzFN1puk27MMGaIxCoi6HmLGyE/view?usp=sharing)**: The 480 × 640 normal maps `imnomral_*.png` and depth maps `imdepth_*.dat`. The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands.
+3. **[Geometry](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Geometry/)** and **[Geometry.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Geometry.zip)**: The 480 × 640 normal maps `imnomral_*.png` and depth maps `imdepth_*.dat`. The R, G, B channel of the normal map corresponds to right, up, backward direction of the image plane. To load the depth map, we can use the following python commands.
     ```python
     with open('imdepth_1.dat', 'rb') as fIn:
         # Read the height and width of depth
@@ -62,9 +62,9 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     ```
     We render normal maps for `main_xml(1)` and `mainDiffMat_xml(1)`, and depth maps for `main_xml(1)`.
 
-4. **[Mask](https://drive.google.com/drive/folders/1GkLnZTIOSeIeewol0wyllP3opdMxdH1i?usp=sharing)** and **[Mask.zip](https://drive.google.com/file/d/1TxejwEi7v7wxTSJjXZnTAX2WhMK1MZF2/view?usp=sharing)**: The 480 × 460 grey scale mask `immask_*.png` for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for `main_xml(1)` and `mainDiffLight_xml(1)`.
+4. **[Mask](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Mask/)** and **[Mask.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Mask.zip)**: The 480 × 460 grey scale mask `immask_*.png` for light sources. The pixel value 0 represents the region of environment maps. The pixel value 0.5 represents the region of lamps. Otherwise, the pixel value will be 1. We render the ground-truth masks for `main_xml(1)` and `mainDiffLight_xml(1)`.
 
-5. **[SVLighting](https://drive.google.com/drive/folders/12Y13IVJcxeu8IblB9OIfQDiy3CEIQHeI?usp=sharing)** and **[SVLighting.zip](https://drive.google.com/file/d/1ibDk2LOOPelZal13E0xdyLgzudNqB44D/view?usp=sharing)**: The (120 × 16) × (160 × 32) per-pixel environment maps `imenv_*.hdr`. The spatial resolution is 120 x 160 while the environment map resolution is 16 x 32. To read the per-pixel environment maps, we can use the following python commands.
+5. **[SVLighting](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/SVLighting/)**: The (120 × 16) × (160 × 32) per-pixel environment maps `imenv_*.hdr`. The spatial resolution is 120 x 160 while the environment map resolution is 16 x 32. To read the per-pixel environment maps, we can use the following python commands.
     ```python
     # Read the envmap of resolution 1920 x 5120 x 3 in RGB format
     env = cv2.imread('imenv_1', -1)[:, :, ::-1]
@@ -72,15 +72,14 @@ All rendered images and the corresponding ground-truths are saved in folder [dat
     env = env.reshape(120, 16, 160, 32, 3)
     env = env.transpose(0, 2, 1, 3, 4)
     ```
-    We render per-pixel environment maps for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`. Since the total size of per-pixel environment maps is 4.0 TB, we do not provide an extra .zip format for downloading. Please consider using the tool [Rclone](https://rclone.org/) if you hope to download all the per-pixel environment maps.
 
-6. **[SVSG](https://drive.google.com/drive/folders/10mTrrCQXmEC-4wvlQTh-hTBETu2x1SxN?usp=sharing)** and **[SVSG.zip](https://drive.google.com/file/d/1MltE_Hoyb1jNV4p3H6n7NogCWQ9cFFQ_/view?usp=sharing)**: The ground-truth spatially-varying spherical Gaussian (SG) parameters `imsgEnv_*.h5`, computed from this optimization [code](https://github.com/lzqsd/SphericalGaussianOptimization). We generate the ground-truth SG parameters for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`. For the detailed format, please refer to the optimization [code](https://github.com/lzqsd/SphericalGaussianOptimization).
+6. **[SVSG](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/SVSG/)**: The ground-truth spatially-varying spherical Gaussian (SG) parameters `imsgEnv_*.h5`, computed from this optimization [code](https://github.com/lzqsd/SphericalGaussianOptimization). We generate the ground-truth SG parameters for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`. For the detailed format, please refer to the optimization [code](https://github.com/lzqsd/SphericalGaussianOptimization).
 
-7. **[Shading](https://drive.google.com/drive/folders/1WJApmMLh0wM64fhkKA4L7iJot6Y86VXW?usp=sharing)** and **[Shading.zip](https://drive.google.com/file/d/1lZsGEyeeUbUl-i68nIMuuT85Sptc6XPi/view?usp=sharing)**: The 120 × 160 diffuse shading `imshading_*.hdr` computed by intergrating the per-pixel environment maps. We render shading for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`.
+7. **[Shading](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Shading/)** and **[Shading.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Shading.zip)**: The 120 × 160 diffuse shading `imshading_*.hdr` computed by intergrating the per-pixel environment maps. We render shading for `main_xml(1)`, `mainDiffMat_xml(1)` and `mainDiffLight_xml(1)`.
 
-8. **[SVLightingDirect](https://drive.google.com/drive/folders/16LgLOPg-E9cTMDnK-4ysS5FxA5aT4Jdz?usp=sharing)** and **[SVLightingDirect.zip](https://drive.google.com/file/d/13aBQ-1xDZ0kjt80KmfWvMmS76Q9Y0NSv/view?usp=sharing)**: The (30 × 16) × (40 × 32) per-pixel environment maps with direct illumination `imenvDirect_*.hdr` only. The spatial resolution is 30 × 40 while the environment maps resolution is 16 × 32. The direct per-pixel environment maps can be load the same way as the per-pixel environment maps. We only render direct per-pixel environment maps for `main_xml(1)` and `mainDiffLight_xml(1)` because the direct illumination of `mainDiffMat_xml(1)` is the same as `main_xml(1)`.
+8. **[SVLightingDirect](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/SVLightingDirect/)** and **[SVLightingDirect.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/SVLightingDirect.zip)**: The (30 × 16) × (40 × 32) per-pixel environment maps with direct illumination `imenvDirect_*.hdr` only. The spatial resolution is 30 × 40 while the environment maps resolution is 16 × 32. The direct per-pixel environment maps can be load the same way as the per-pixel environment maps. We only render direct per-pixel environment maps for `main_xml(1)` and `mainDiffLight_xml(1)` because the direct illumination of `mainDiffMat_xml(1)` is the same as `main_xml(1)`.
 
-9. **[ShadingDirect](https://drive.google.com/drive/folders/1AiUeU0VsPvQlaBwEyqOkotDSTM1JsNZo?usp=sharing)** and **[ShadingDirect.zip](https://drive.google.com/file/d/1KMbo5e5lAPLztEiM301dPBPFQ97mWhTA/view?usp=sharing)**: The 120 × 160 direct shading `imshadingDirect_*.rgbe`. To load the direct shading, we can use the following python command.
+9. **[ShadingDirect](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/ShadingDirect/)** and **[ShadingDirect.zip](https://drive.google.com/file/d/1KMbo5e5lAPLztEiM301dPBPFQ97mWhTA/view?usp=sharing)**: The 120 × 160 direct shading `imshadingDirect_*.rgbe`. To load the direct shading, we can use the following python command.
     ```python
     im = cv2.imread('imshadingDirect_1.rgbe', -1)[:, :, ::-1]
     ```
