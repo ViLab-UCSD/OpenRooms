@@ -13,7 +13,7 @@
 
 \[06/29/21\]. We released two demo scenes with all ground-truths ([Demo](https://drive.google.com/drive/folders/1SNgrVUhXrKTt8pftdQpUj80mXtK2FyeB?usp=sharing) and [Demo.zip](https://drive.google.com/file/d/1910EC4IIoR4fkdqSnd2vk2-A_G6cxTpi/view?usp=sharing)). Please use the two scenes to determine usage for your applications.
 
-\[05/19/21\]. We released all rendered images ([Images](https://drive.google.com/drive/folders/1-DhVDNjPc1l8Vu9Qt_yMbHnpC9OEUa-q?usp=sharing) and [Images.zip](https://drive.google.com/file/d/11046xQ9L6SkahoxF0W3cn__pmFZQYKyv/view?usp=sharing)).
+\[05/19/21\]. We released all rendered images ([Images](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Image/)) and [Images.zip](https://mclab.ucsd.edu/OpenRooms_public/data/rendering/data/Image.zip)).
 
 ## About
 This is the release webpage for the [OpenRooms](https://vilab-ucsd.github.io/ucsd-openrooms/) dataset. We first introduce the rendered images and various ground-truths. Next, we introduce how to render your own images based on the OpenRooms dataset creation framework. For each type of data, we offer two kinds of formats, zip files and individual folders, so users may choose whether to download the whole dataset more efficiently or download individual folders for different scenes. We recommend using [Rclone](https://rclone.org/) to avoid slow or unstable downloads.
